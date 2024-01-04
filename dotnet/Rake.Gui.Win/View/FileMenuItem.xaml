@@ -1,0 +1,14 @@
+<MenuItem Header="_File"
+          x:Class="Rake.Gui.Win.View.FileMenuItem"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:vm="clr-namespace:Rake.Gui.Win.ViewModel">
+    
+    <MenuItem.DataContext>
+        <vm:FileMenuItem/>
+    </MenuItem.DataContext>
+    
+    <MenuItem x:Name="Open" Header="_Open..." InputGestureText="Ctrl+O" Command="{Binding OpenCommand}"/>
+    <MenuItem x:Name="SaveAs" Header="_Save as..." InputGestureText="Ctrl+S" Command="{Binding SaveAsCommand}"/>
+    <MenuItem x:Name="Close" Header="Close" InputGestureText="Ctrl+Q" Command="{Binding CloseCommand}" CommandParameter="{Binding Window}"/>
+</MenuItem>

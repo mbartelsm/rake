@@ -1,0 +1,25 @@
+﻿<Window x:Class="Rake.Gui.Win.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:Rake.Gui.Win.View"
+        xmlns:vm="clr-namespace:Rake.Gui.Win.ViewModel"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <Window.DataContext>
+        <vm:MainWindow/>
+    </Window.DataContext>
+    
+    <Window.InputBindings>
+        <KeyBinding Gesture="Ctrl+O" Command="{Binding OpenCommand}"/>
+        <KeyBinding Gesture="Ctrl+S" Command="{Binding SaveAsCommand}"/>
+        <KeyBinding Gesture="Ctrl+Q" Command="{Binding CloseCommand}" CommandParameter="{Binding }"/>
+        <KeyBinding Gesture="Ctrl+Z" Command="{Binding UndoCommand}"/>
+        <KeyBinding Gesture="Ctrl+Shift+Z" Command="{Binding RedoCommand}"/>
+    </Window.InputBindings>
+
+    <DockPanel>
+        <v:TopMenu x:Name="TopMenu" DockPanel.Dock="Top"/>
+        <v:Status x:Name="Status" DockPanel.Dock="Bottom"/>
+        <Canvas></Canvas>
+    </DockPanel>
+</Window>
